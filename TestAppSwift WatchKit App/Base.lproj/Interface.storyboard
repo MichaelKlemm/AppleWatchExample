@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TestAppSwift_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="Test" id="xPw-Eo-qz7">
+                            <connections>
+                                <action selector="buttonPushed" destination="AgC-eL-Hgc" id="4uv-xJ-bg7"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Pedometer" id="xbg-nL-89n">
+                            <connections>
+                                <segue destination="weU-7U-vbN" kind="push" id="bKG-jA-amK"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="HealthKit" id="gAp-OD-kIY">
+                            <connections>
+                                <segue destination="kNl-sd-xmS" kind="push" id="zOB-7o-UbJ"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="button" destination="xPw-Eo-qz7" id="IOy-rg-5Ya"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Hear Rate Controller-->
+        <scene sceneID="X6j-Tc-wgT">
+            <objects>
+                <controller id="kNl-sd-xmS" customClass="HearRateController" customModule="TestAppSwift_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Start Workout" id="bRK-ad-yTi">
+                            <connections>
+                                <action selector="startNewWorkout" destination="kNl-sd-xmS" id="hfg-9x-SDW"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="I've finished now" id="u66-bK-E1X">
+                            <connections>
+                                <action selector="stopWorkout" destination="kNl-sd-xmS" id="qv6-hx-HmR"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="447" y="131"/>
+        </scene>
+        <!--Pedometer Controller-->
+        <scene sceneID="2O5-Ta-7zY">
+            <objects>
+                <controller id="weU-7U-vbN" customClass="PedometerController" customModule="TestAppSwift_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" id="Eyp-nu-0Ge"/>
+                        <label alignment="left" text="Label" id="gEu-Dl-t7f"/>
+                        <label alignment="left" text="Label" id="L84-ud-k4v"/>
+                        <label alignment="left" text="Label" id="bfq-yp-exJ"/>
+                        <label alignment="left" text="Label" id="r72-vc-fxv"/>
+                    </items>
+                    <connections>
+                        <outlet property="distance" destination="gEu-Dl-t7f" id="73y-WT-Lvs"/>
+                        <outlet property="floorsAsc" destination="L84-ud-k4v" id="vui-Gj-pQv"/>
+                        <outlet property="floorsDesc" destination="bfq-yp-exJ" id="mjP-mN-ElH"/>
+                        <outlet property="pace" destination="r72-vc-fxv" id="o62-hs-Wj2"/>
+                        <outlet property="steps" destination="Eyp-nu-0Ge" id="QLp-so-KvX"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="455" y="365"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="TestAppSwift_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
